@@ -1,0 +1,18 @@
+<link rel='stylesheet' href='style.css'>
+
+Progress: <input type='number' onchange='changeValue(event)' value='0'>
+<div class='progress-rounded'>
+    <svg class='progress' viewBox="0 0 33.8 33.8" id='load'>
+        <circle class='bg' r="15.9" cx="16.9" cy="16.9" />
+        <circle class='loader' r="15.9" stroke-dasharray="0, 100" cx="16.9" cy="16.9" />
+    </svg>
+</div>
+<script>
+    load = null;
+function changeValue(event) {
+    value = event.target.value;
+    box = document.getElementById('load').querySelector('circle.loader');
+    load = box;
+    box.setAttribute('stroke-dasharray', value+' 100');
+}
+</script>
